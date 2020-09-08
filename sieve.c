@@ -1,5 +1,6 @@
 //时间复杂度O(nln(ln(n)))
 //空间复杂度O(n)
+//termux 最大可以计算 2^32 ÷ 2 - 2 = 2147483646 以内的素数
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
@@ -24,12 +25,13 @@ void sievePrime(n) {
 	}
 	stop = clock();
 	double duration = (double)(stop - start) / CLOCKS_PER_SEC;
-	/*printf("%d\n",2);
+	//printf("%d\n",2);
 	for(unsigned long k = 3; k <= n; k += 2)
 	{
-		if(a[k])
+		//if(a[k])
+		if(k > n - 100 && a[k])
 			printf("%lu\n",k);
-	}*/
+	}
 	//printf("calc times: %lu\n", cnt);
         printf("duration: %f ms\n", duration * 1000);
 	free(a);
